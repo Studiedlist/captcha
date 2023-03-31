@@ -15,7 +15,7 @@ pub use filters::grid::Grid;
 pub use filters::noise::Noise;
 pub use filters::wave::Wave;
 
-pub trait Filter {
+pub trait Filter: Clone {
     fn apply(&self, i: &mut Image);
 }
 
@@ -26,4 +26,3 @@ impl<T: Filter> Filter for Box<T> {
         self.deref().apply(i);
     }
 }
-

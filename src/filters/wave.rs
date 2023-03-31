@@ -10,6 +10,8 @@ pub enum Direction {
     VERTICAL,
 }
 
+#[derive(Clone, Debug)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Wave {
     f: f64,
     amp: f64,
