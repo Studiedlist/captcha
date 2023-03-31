@@ -54,6 +54,8 @@ extern crate image;
 extern crate lodepng;
 extern crate rand;
 extern crate serde_json;
+#[cfg(feature = "serde")]
+extern crate serde;
 
 mod audio;
 pub mod filters;
@@ -77,6 +79,7 @@ use std::path::Path;
 
 /// Represents the area which contains text in a CAPTCHA.
 #[derive(Clone, Debug)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Geometry {
     /// The minimum x coordinate of the area which contains text (inclusive).
     pub left: u32,

@@ -3,6 +3,8 @@ use rand::{thread_rng, Rng};
 use filters::Filter;
 use images::{Image, Pixl};
 
+#[derive(Clone, Debug)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Dots {
     n: u32,
     min_radius: u32,

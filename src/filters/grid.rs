@@ -1,6 +1,8 @@
 use filters::Filter;
 use images::{Image, Pixl};
 
+#[derive(Clone, Debug)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Grid {
     y_gap: u32,
     x_gap: u32,
