@@ -15,7 +15,7 @@ pub use filters::grid::Grid;
 pub use filters::noise::Noise;
 pub use filters::wave::Wave;
 
-pub trait Filter: Clone {
+pub trait Filter {
     fn apply(&self, i: &mut Image);
 }
 
