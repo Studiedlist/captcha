@@ -18,3 +18,12 @@ pub use filters::wave::Wave;
 pub trait Filter {
     fn apply(&self, i: &mut Image);
 }
+
+use std::ops::Deref;
+
+impl<T: Filter> Filter for Box<T> {
+    fn apply(&self, i: &mut Image) {
+        self.deref().apply(i);
+    }
+}
+
