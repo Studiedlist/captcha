@@ -20,9 +20,16 @@ pub trait Filter: Clone {
 }
 
 use std::ops::Deref;
+use std::sync::{Arc};
 
 impl<T: Filter> Filter for Box<T> {
     fn apply(&self, i: &mut Image) {
         self.deref().apply(i);
+    }
+}
+
+impl<T: Filter> Filter for Arc<T> {
+    fn apply(&self, i: &mut Image) {
+        self.deref().apply(i)
     }
 }
