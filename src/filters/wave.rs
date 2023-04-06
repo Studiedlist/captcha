@@ -3,7 +3,7 @@ use std::f64::consts;
 use filters::Filter;
 use images::Image;
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub enum Direction {
     HORIZONTAL,

@@ -78,7 +78,7 @@ use std::cmp::{max, min};
 use std::path::Path;
 
 /// Represents the area which contains text in a CAPTCHA.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Geometry {
     /// The minimum x coordinate of the area which contains text (inclusive).

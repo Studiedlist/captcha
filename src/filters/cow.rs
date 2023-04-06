@@ -6,7 +6,7 @@ use filters::Filter;
 use images::Image;
 use Geometry;
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Cow {
     min_radius: u32,
